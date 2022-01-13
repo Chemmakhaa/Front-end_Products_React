@@ -42,7 +42,7 @@ import '../style/ProductList.css';
     { field: 'category', headerName: 'Category', width: 130 },
 
     { field: 'image', headerName: 'Image', width: 130 
-    ,renderCell: (params) => <img width='80px' height="80px" src={params.value} />, // renderCell will render the component
+    ,renderCell: (params) => <img alt='some value' width='80px' height="80px" src={params.value} />, // renderCell will render the component
   },{ field: 'rating', headerName: 'Rating', width: 70 
   ,renderCell: (params) =><div style={{textAlign:'center',width:'100%'}}  >{params.value.rate}</div>, // renderCell will render the component
   }
