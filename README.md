@@ -71,5 +71,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 | First Header  | Second Header |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| axios | ......  |
+| DataGrid  | A fast and extendable react data table and react data grid. It's a feature-rich component available in MIT or Commercial versions.  |
+| row  | ows are key-value pair objects, mapping column names as keys with their values. You should also provide an id property on each row to allow delta updates and better performance.  |
+| DataGrid  | Comparable to rows, columns are objects defined with a set of attributes of the GridColDef interface. They are mapped to rows through their field property.  |
+
