@@ -16,13 +16,22 @@ import '../style/ProductList.css';
 
   const [category, setCategory] = React.useState('All');
 
-  /*function Toarray(array){
-    const newProducts= []
+  function toArray(array){
+    let newProducts= []
     array.map((row) =>
-      newProducts.concat([1])
+      newProducts.push({
+      'id':row.id,
+      'title':row.title,
+      'price':row.price,
+      'description':row.description,
+      'image':row.image,    
+      'category':row.category,
+      'rate':row.rating.rate,
+      'count':row.rating.count
+    })
     );
-    console.log(newProducts);
-  } */ 
+    return newProducts;
+  }  
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -43,8 +52,11 @@ import '../style/ProductList.css';
 
     { field: 'image', headerName: 'Image', width: 130 
     ,renderCell: (params) => <img alt='some value' width='80px' height="80px" src={params.value} />, // renderCell will render the component
-  },{ field: 'rating', headerName: 'Rating', width: 70 
-  ,renderCell: (params) =><div style={{textAlign:'center',width:'100%'}}  >{params.value.rate}</div>, // renderCell will render the component
+  },{ field: 'rate', headerName: 'Rating', width: 70 
+  ,renderCell: (params) =><div style={{textAlign:'center',width:'100%'}}  >{params.value}</div>, // renderCell will render the component
+  },
+  { field: 'count', headerName: 'Count', width: 70 
+  ,renderCell: (params) =><div style={{textAlign:'center',width:'100%'}}  >{params.value}</div>, // renderCell will render the component
   }
   ];
 
@@ -59,7 +71,6 @@ import '../style/ProductList.css';
     axios.get(`https://fakestoreapi.com/products`)
     .then(res => {
       setProduct(res.data)
-      console.log(res.data);
       })
 
   },[]);
@@ -88,9 +99,9 @@ import '../style/ProductList.css';
       </FormControl>
     </Box>
   </div>
-  <div style={{padding:'15px 20px 20px 20px' ,height: 600, width: '85%' }}>
+  <div style={{padding:'15px 20px 20px 20px' ,height: 600, width: '88%' }}>
     <DataGrid
-      rows={ category==='All' ?  products : productsCategory}
+      rows={ category==='All' ?  toArray(products) : toArray(productsCategory)}
       columns={columns}
       pageSize={5}
       rowsPerPageOptions={[5]}
