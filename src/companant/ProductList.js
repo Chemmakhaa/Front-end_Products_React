@@ -7,12 +7,22 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
+
+
 import '../style/ProductList.css';
 
 
  function ProductList() {
 
   const [category, setCategory] = React.useState('All');
+
+  /*function Toarray(array){
+    const newProducts= []
+    array.map((row) =>
+      newProducts.concat([1])
+    );
+    console.log(newProducts);
+  } */ 
 
   const handleChange = (event) => {
     setCategory(event.target.value);
@@ -37,6 +47,8 @@ import '../style/ProductList.css';
   ,renderCell: (params) =><div style={{textAlign:'center',width:'100%'}}  >{params.value.rate}</div>, // renderCell will render the component
   }
   ];
+
+  
   
 
 
@@ -55,7 +67,7 @@ import '../style/ProductList.css';
 
   return (
    <div style={{display:'flex'}} > 
-  <div style={{padding:'50px 20px 20px 20px',width:'100px'}} >
+  <div style={{padding:'15px 20px 20px 20px',width:'100px'}} >
  
  <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
@@ -76,7 +88,7 @@ import '../style/ProductList.css';
       </FormControl>
     </Box>
   </div>
-  <div style={{padding:'50px 20px 20px 20px' ,height: 600, width: '85%' }}>
+  <div style={{padding:'15px 20px 20px 20px' ,height: 600, width: '85%' }}>
     <DataGrid
       rows={ category==='All' ?  products : productsCategory}
       columns={columns}
