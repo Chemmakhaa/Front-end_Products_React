@@ -74,5 +74,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 | axios | ......  |
 | DataGrid  | A fast and extendable react data table and react data grid. Take Row and columns of the tables  |
 | row  | Contitent le tableau de dataset  |
-| columns  | Comparable to rows, columns are objects defined with a set of attributes of the GridColDef interface. They are mapped to rows through their field property.  |
+| columns  | Comparable to rows, columns are objects defined with a set of attributes of the array. They are mapped to rows through their field property.  |
 
